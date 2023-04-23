@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "ba99f69a-7f1e-416f-a63b-e1d2d144e442",
+		"name": "Capstone-Express-ORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16747622"
+	},
+	"item": [
+		{
+			"name": "POST đăng ký",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST đăng nhập",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get danh sách ảnh",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET tìm kiếm danh sách ảnh theo tên",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ten_hinh\": \"Hoa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/home/get-image-by-name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"home",
+						"get-image-by-name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET thông tin ảnh và người tạo ảnh bằng ID ảnh",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET thông tin bình luận theo ID ảnh",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET thông tin đã lưu hình nãy chưa theo id ảnh",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST để lưu thông tin bình luận của người dùng với hình ảnh",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy thông tin user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET danh sách ảnh đã lưutheo user id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET danh sách ảnh đã tạo theo user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/image/get-image-created-by-user-id/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"image",
+						"get-image-created-by-user-id",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE xóa ảnh đã tạo theo id ảnh",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/image/delete-image-by-id/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"image",
+						"delete-image-by-id",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST thêm 1 ảnh của user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PUT thông tin cá nhân user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080"
+		}
+	]
+}
