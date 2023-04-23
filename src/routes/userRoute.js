@@ -1,11 +1,8 @@
-const express = require('express');
+const express = require("express");
+const { changeUserInfo } = require("../controllers/userController");
+const { authentication } = require("../controllers/authController");
 const userRouter = express.Router();
 
-const { getUser, createUser } = require('../controllers/userController');
-
-// tạo API 
-userRouter.get("/get-user", getUser);
-
-userRouter.post("/create-user", createUser);
+userRouter.put("/change-info-user/:nguoi_dung_id",authentication, changeUserInfo);
 
 module.exports = userRouter;

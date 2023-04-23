@@ -1,10 +1,16 @@
 const { Op } = require("sequelize");
 const initModels = require("../models/init-models");
 const sequelize = require("../models");
-const { successCode, errorCode, failCode } = require("../config/response");
 const model = initModels(sequelize);
+
+const { successCode, errorCode, failCode } = require("../config/response");
+const { descripToken } = require("../config/jwt");
 const getFood = async (req, res) => {
   try {
+    // const { token} = req.headers;
+    // const decodeToken=descripToken(token);
+
+    // const {user_id} = decodeToken
     // SELECT * FROM food WHERE food_name LIKE '%a%'
     // bất đồng bộ
     // list object [{},{}]

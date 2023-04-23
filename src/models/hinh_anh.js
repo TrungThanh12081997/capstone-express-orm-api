@@ -1,51 +1,55 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return sub_food.init(sequelize, DataTypes);
+  return hinh_anh.init(sequelize, DataTypes);
 }
 
-class sub_food extends Sequelize.Model {
+class hinh_anh extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   return super.init({
-    sub_id: {
+    hinh_id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    sub_name: {
+    ten_hinh: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    sub_price: {
-      type: DataTypes.INTEGER,
+    duong_dan: {
+      type: DataTypes.STRING(255),
       allowNull: true
     },
-    food_id: {
+    mo_ta: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    nguoi_dung_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'food',
-        key: 'food_id'
+        model: 'nguoi_dung',
+        key: 'nguoi_dung_id'
       }
     }
   }, {
     sequelize,
-    tableName: 'sub_food',
-    timestamps: false,
+    tableName: 'hinh_anh',
+    timestamps: true,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "sub_id" },
+          { name: "hinh_id" },
         ]
       },
       {
-        name: "food_id",
+        name: "nguoi_dung_id",
         using: "BTREE",
         fields: [
-          { name: "food_id" },
+          { name: "nguoi_dung_id" },
         ]
       },
     ]

@@ -1,24 +1,23 @@
-const express = require('express');
+const express = require("express");
 const rootRouter = express.Router();
 
-const userRouter = require('./userRoute');
-const foodRouter = require('./foodRoute');
-const likeRouter = require('./likeRoute');
-const rateRouter = require('./rateRoute');
-const orderRouter = require('./orderRoute');
 
+const homeRouter = require("./homeRoute");
+const detailRouter = require("./detailRoute");
+const imageRouter = require("./imageRoute");
+const postImageRouter = require("./postImageRoute");
+const userRouter = require("./userRoute");
 
+const { loginUser, signUpUser } = require("../controllers/authenController");
+
+rootRouter.use("/signup", signUpUser);
+rootRouter.use("/login", loginUser);
+
+rootRouter.use("/home", homeRouter);
+rootRouter.use("/detail", detailRouter);
+rootRouter.use("/image", imageRouter);
+rootRouter.use("/post-image", postImageRouter);
 rootRouter.use("/user", userRouter);
 
-rootRouter.use("/food", foodRouter);
-
-rootRouter.use("/like", likeRouter);
-
-
-rootRouter.use("/rate", rateRouter);
-
-rootRouter.use("/order", orderRouter);
-
-// rootRouter.use("/product", productRouter);
 
 module.exports = rootRouter;
